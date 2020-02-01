@@ -759,6 +759,8 @@ Base.normpath(fp::AbstractPath) = norm(fp)
 Base.abspath(fp::AbstractPath) = abs(fp)
 Base.relpath(fp::AbstractPath) = relative(fp)
 Base.filemode(fp::AbstractPath) = mode(fp)
+Base.mtime(fp::AbstractPath) = Base.mtime(string(fp))
+Base.ctime(fp::AbstractPath) = Base.ctime(string(fp))
 Base.isabspath(fp::AbstractPath) = isabs(fp)
 Base.mkpath(fp::AbstractPath) = mkdir(fp; recursive=true)
 
